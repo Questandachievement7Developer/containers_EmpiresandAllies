@@ -1,3 +1,10 @@
 cd /
 git clone https://github.com/AcidCaos/raisetheempires /RaiseTheEmpires
-echo
+echo " Installing Python dependencies "
+dependencies="tendo py3amf flask flask_session flask_sqlalchemy flask_compress flask_socketio daiquiri git+git://github.com/christhechris/libscrc python-editor"
+python3 -m easy_install pip
+for a in ${dependencies}; do
+echo Installing ${a}
+pip install ${a}
+done
+echo installation complete
