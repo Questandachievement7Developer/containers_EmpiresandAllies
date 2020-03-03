@@ -1,0 +1,7 @@
+## Empires and allies Server container
+echo "Hello world"
+uname -a
+echo "Launching Empires and allies"
+cd /RaiseTheEmpires
+git fetch
+python3 empires-server.py
