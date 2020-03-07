@@ -1,8 +1,5 @@
-python3.7
-python3.7-setuptools
-python3.7-dev
-python3
-python3-setuptools
-python3-dev
+python
+python-setuptools
+base-devel
 nano
 git
