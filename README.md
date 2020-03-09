@@ -4,13 +4,20 @@ Setup old empires and allies server in just couple of code using unifiedContaine
 ## Container Blueprint
 container Blueprint
 
+
+core Requirements
 package arm = 
 
 package x86_64 = pepper-flash
+electron@4.0
+5> above compositor will crash due to enforced gpu process containerization
 
+launch param
 electron . --no-sandbox --disable-dev-shm-usage --ppapi-flash-path=/usr/lib/PepperFlash/libpepflashplayer.so --disable-gpu --disable-gpu-appcontainer --disable-gpu-sandbox --disable-accelerated-compositing --debug-print --enable-gpu-debugging
 
 https://github.com/electron/electron-quick-start
+
+inject index.html >
 
 ```
 <!DOCTYPE html>
@@ -25,8 +32,6 @@ https://github.com/electron/electron-quick-start
 </html>
 
 ```
-electron@4.0
-5> above compositor will crash due to enforced gpu process containerization
 
 Port mapping 
 empires-server.py=2495
