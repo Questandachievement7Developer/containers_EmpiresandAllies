@@ -27,12 +27,17 @@ novnc <br>
 export DISPLAY=:69
 vncserver -SecurityTypes none :69
 ./utils/launch.sh --vnc localhost:5901
+for empires-server
+python empires-server.py --port 2495
 
 https://github.com/AcidCaos/raisetheempires
 "https://github.com/novnc/noVNC"
 https://github.com/electron/electron-quick-start
 
-inject index.html >
+
+
+
+inject main.js >
 
 ```
 <!DOCTYPE html>
