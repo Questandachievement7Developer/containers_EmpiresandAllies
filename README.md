@@ -14,6 +14,12 @@ electron@4.0
 5> above compositor will crash due to enforced gpu process containerization
 
 launch param
+<br>
+arm
+electron . --no-sandbox --disable-dev-shm-usage --ppapi-flash-path=/opt/google/chrome/libpepflashplayer.so --disable-gpu --disable-gpu-appcontainer --disable-gpu-sandbox --disable-accelerated-compositing --debug-print --enable-gpu-debugging
+
+<br>
+x86_64
 electron . --no-sandbox --disable-dev-shm-usage --ppapi-flash-path=/usr/lib/PepperFlash/libpepflashplayer.so --disable-gpu --disable-gpu-appcontainer --disable-gpu-sandbox --disable-accelerated-compositing --debug-print --enable-gpu-debugging
 
 https://github.com/electron/electron-quick-start
