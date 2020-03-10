@@ -20,8 +20,16 @@ electron . --no-sandbox --disable-dev-shm-usage --ppapi-flash-path=/opt/google/c
 
 <br>
 x86_64
-electron . --no-sandbox --disable-dev-shm-usage --ppapi-flash-path=/usr/lib/PepperFlash/libpepflashplayer.so --disable-gpu --disable-gpu-appcontainer --disable-gpu-sandbox --disable-accelerated-compositing --debug-print --enable-gpu-debugging
+electron . --no-sandbox --disable-dev-shm-usage --ppapi-flash-path=/usr/lib/PepperFlash/libpepflashplayer.so --disable-gpu --disable-gpu-appcontainer --disable-gpu-sandbox --disable-accelerated-compositing --debug-print --enable-gpu-debugging <br>
 
+
+novnc <br>
+export DISPLAY=:69
+vncserver -SecurityTypes none :69
+./utils/launch.sh --vnc localhost:5901
+
+https://github.com/AcidCaos/raisetheempires
+"https://github.com/novnc/noVNC"
 https://github.com/electron/electron-quick-start
 
 inject index.html >
