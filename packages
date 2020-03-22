@@ -15,7 +15,6 @@ sdl2_mixer
 libjpeg6-turbo 
 pango 
 xz 
-base-devel 
 cmake 
 nasm
 glibmm 
