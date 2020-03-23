@@ -4,4 +4,13 @@ uname -a
 echo "Launching Empires and allies"
 cd /RaiseTheEmpires
 git fetch
-python3 empires-server.py
+python3 empires-server.py --host 0.0.0.0 &
+export serverPID=$!
+echo "--------------------"
+echo "PLEASE WAIT "
+echo "===================="
+sleep 8
+echo "++++++++++++++++++++++++++"
+echo " CONNECT TO THIS ADDRESS "
+echo "++++++++++++++++++++++++++"
+ssh -o "StrictHostKeyChecking=no" -o "ServerAliveInterval=360" -R 80:localhost:5005 ssh.localhost.run
