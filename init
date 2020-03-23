@@ -2,6 +2,10 @@
 echo "Hello world"
 uname -a
 echo "Launching Empires and allies"
+echo Updating RTEPort
+rm -rf /raisetheempiresMod-dev
+svn checkout https://github.com/Questandachievement7Developer/RaiseTheEmpiresPort_Native/trunk/empiresservercontainer/raisetheempiresMod-dev
+cp -rua /raisetheempiresMod-dev/* /RaiseTheEmpires
 cd /RaiseTheEmpires
 git fetch
 python3 empires-server.py --host 0.0.0.0 &
