@@ -14,3 +14,5 @@ echo "++++++++++++++++++++++++++"
 echo " CONNECT TO THIS ADDRESS "
 echo "++++++++++++++++++++++++++"
 ssh -o "StrictHostKeyChecking=no" -o "ServerAliveInterval=360" -R 80:localhost:5005 ssh.localhost.run
+echo "Server terminated"
+kill -9 ${serverPID}
