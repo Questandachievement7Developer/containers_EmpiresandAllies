@@ -15,6 +15,7 @@ dependencies="tendo py3amf flask flask_session flask_sqlalchemy flask_compress f
 python3 -m easy_install pip
 for a in ${dependencies}; do
 echo Installing ${a}
+pip3 install ${a}
 pip install ${a}
 done
 echo installation complete
