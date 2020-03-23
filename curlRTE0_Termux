@@ -1,5 +1,5 @@
 #!/bin/sh
-echo Hello
+echo Hello Welcome to the empiresandallies complex server
 pkg install git -y
 if [ -z $(which bay) ]; then
 git clone https://github.com/Questandachievement7Developer/UnifiedContainer 
