@@ -5,7 +5,7 @@ rm -rf /usr/bin/*awk*
 pacman -S gawk --noconfirm
 svn checkout https://github.com/Questandachievement7Developer/RaiseTheEmpiresPort_Native/trunk/empiresservercontainer/raisetheempiresMod-dev
 git clone https://github.com/AcidCaos/raisetheempires /RaiseTheEmpires
-
+useradd raisetheempires # for custom domain names
 echo Merging two Repository 
 echo Deleting empires-server.py
 rm /raisetheempiresMod-dev/empires-server.py
