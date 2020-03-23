@@ -7,8 +7,8 @@ cd UnifiedContainer
 chmod +x ./unifyServer
 ./unifyServer install yes
 echo Project bay has been installed
-bash ${0}
-else
+#bash ${0}
+fi
 echo Project Bay has been installed
 bay remove empiresserver
 bay import "https://github.com/Questandachievement7Developer/containers_EmpiresandAllies"
@@ -30,4 +30,3 @@ echo "or if you want a total fix by nuking the container"
 echo "bay reset empiresserver"
 echo "++++++++++"
 echo "This server is powered by python and unifiedContainer Technology"
-fi
