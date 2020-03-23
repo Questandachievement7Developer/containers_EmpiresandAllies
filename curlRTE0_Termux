@@ -11,10 +11,15 @@ bash ${0}
 else
 echo Project Bay has been installed
 bay import "https://github.com/Questandachievement7Developer/containers_EmpiresandAllies"
+bin="${PREFIX}/bin/empires-server"
+echo "#!/bin/bash" > ${bin}
+echo "bay launchfg empiresserver" >> ${bin}
+chmod +x ${bin}
+
 printf "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 echo Now you can launch Empires and allies server from this command 
 echo "=========="
-echo "bay launchfg empiresserver"
+echo "empires-server"
 echo "=========="
 echo "++++++++++"
 echo " IF YOU HAVE any problem with the empiresserver Please do "
@@ -22,4 +27,5 @@ echo "bay update empiresserver"
 echo "or if you want a total fix by nuking the container"
 echo "bay reset empiresserver"
 echo "++++++++++"
+echo "This server is powered by python and unifiedContainer Technology"
 fi
