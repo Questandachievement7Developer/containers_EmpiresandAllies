@@ -17,8 +17,8 @@ sleep 8
 echo "++++++++++++++++++++++++++"
 echo " CONNECT TO THIS ADDRESS "
 echo "++++++++++++++++++++++++++"
-
-ssh -o "StrictHostKeyChecking=no" -o "ServerAliveInterval=360" -R 80:localhost:5005 ssh.localhost.run
+su -c "ssh -o "StrictHostKeyChecking=no" -o "ServerAliveInterval=360" -R 80:localhost:5005 ssh.localhost.run" raisetheempires
+#ssh -o "StrictHostKeyChecking=no" -o "ServerAliveInterval=360" -R 80:localhost:5005 ssh.localhost.run
 #ssh -R localhost:80:localhost:8080 random-string@ssh.localhost.run
 echo "Server terminated"
 kill -9 ${serverPID}
