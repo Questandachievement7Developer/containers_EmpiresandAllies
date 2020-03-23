@@ -16,4 +16,10 @@ echo Now you can launch Empires and allies server from this command
 echo "=========="
 echo "bay launchfg empiresserver"
 echo "=========="
+echo "++++++++++"
+echo " IF YOU HAVE any problem with the empiresserver Please do "
+echo "bay update empiresserver"
+echo "or if you want a total fix by nuking the container"
+echo "bay reset empiresserver"
+echo "++++++++++"
 fi
