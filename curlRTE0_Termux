@@ -10,6 +10,7 @@ echo Project bay has been installed
 bash ${0}
 else
 echo Project Bay has been installed
+bay remove empiresserver
 bay import "https://github.com/Questandachievement7Developer/containers_EmpiresandAllies"
 bay update empiresserver
 bin="${PREFIX}/bin/empires-server"
