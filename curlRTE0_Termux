@@ -11,6 +11,7 @@ bash ${0}
 else
 echo Project Bay has been installed
 bay import "https://github.com/Questandachievement7Developer/containers_EmpiresandAllies"
+bay update empiresserver
 bin="${PREFIX}/bin/empires-server"
 echo "#!/bin/bash" > ${bin}
 echo "bay launchfg empiresserver" >> ${bin}
