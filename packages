@@ -3,6 +3,7 @@ python-setuptools
 base-devel
 nano
 git
+subversion
 mesa 
 curl 
 zlib 
