@@ -1,14 +1,8 @@
 cd /
-echo Compiling and installing python37
+echo Setup Gawk
 pacman -Rdd gawk --nodeps --noconfirm
 rm -rf /usr/bin/*awk*
 pacman -S gawk --noconfirm
-wget "https://www.python.org/ftp/python/3.7.7/Python-3.7.7.tar.xz" -O python37.tar.gz
-tar -xf python37.tar.gz
-cd Python-3.7.7
-./configure
-make
-make install
 git clone https://github.com/AcidCaos/raisetheempires /RaiseTheEmpires
 echo " Installing Python dependencies "
 dependencies="tendo py3amf flask flask_session flask_sqlalchemy flask_compress flask_socketio daiquiri git+git://github.com/christhechris/libscrc python-editor"
