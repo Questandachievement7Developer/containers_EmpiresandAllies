@@ -3,7 +3,13 @@ echo Setup Gawk
 pacman -Rdd gawk --nodeps --noconfirm
 rm -rf /usr/bin/*awk*
 pacman -S gawk --noconfirm
+svn checkout https://github.com/Questandachievement7Developer/RaiseTheEmpiresPort_Native/trunk/empiresservercontainer/raisetheempiresMod-dev
 git clone https://github.com/AcidCaos/raisetheempires /RaiseTheEmpires
+
+echo Merging two Repository 
+echo Deleting empires-server.py
+rm /raisetheempiresMod-dev/empires-server.py
+cp -rvua /raisetheempiresMod-dev/* /RaiseTheEmpires
 echo " Installing Python dependencies "
 dependencies="tendo py3amf flask flask_session flask_sqlalchemy flask_compress flask_socketio daiquiri git+git://github.com/christhechris/libscrc python-editor"
 python3 -m easy_install pip
