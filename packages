@@ -7,6 +7,7 @@ zlib
 ffmpeg 
 glew 
 pcre 
+wget
 cairo 
 sdl2 
 sdl2_mixer 
@@ -17,3 +18,4 @@ cmake
 nasm
 glibmm 
 rtmpdump
+coreutils
