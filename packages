@@ -20,5 +20,6 @@ xz
 cmake 
 nasm
 glibmm 
+openssh
 rtmpdump
 coreutils
