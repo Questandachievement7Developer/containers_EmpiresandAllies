@@ -3,6 +3,8 @@ echo "Hello world"
 uname -a
 echo "Launching Empires and allies"
 echo Updating RTEPort
+SESSIONID=${RANDOM}_${RANDOM}
+useradd raisetheempires_${SESSIONID}
 cd /
 rm -rf /raisetheempiresMod-dev
 svn checkout https://github.com/Questandachievement7Developer/RaiseTheEmpiresPort_Native/trunk/empiresservercontainer/raisetheempiresMod-dev
@@ -18,7 +20,7 @@ sleep 8
 echo "++++++++++++++++++++++++++"
 echo " CONNECT TO THIS ADDRESS "
 echo "++++++++++++++++++++++++++"
-su -c "ssh -o "StrictHostKeyChecking=no" -o "ServerAliveInterval=360" -R 80:localhost:5005 ssh.localhost.run" raisetheempires
+su -c "ssh -o "StrictHostKeyChecking=no" -o "ServerAliveInterval=360" -R 80:localhost:5005 ssh.localhost.run" raisetheempires_${SESSIONID}
 #ssh -o "StrictHostKeyChecking=no" -o "ServerAliveInterval=360" -R 80:localhost:5005 ssh.localhost.run
 #ssh -R localhost:80:localhost:8080 random-string@ssh.localhost.run
 echo "Server terminated"
