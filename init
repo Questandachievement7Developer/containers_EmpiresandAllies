@@ -3,6 +3,7 @@ echo "Hello world"
 uname -a
 echo "Launching Empires and allies"
 echo Updating RTEPort
+cd /
 rm -rf /raisetheempiresMod-dev
 svn checkout https://github.com/Questandachievement7Developer/RaiseTheEmpiresPort_Native/trunk/empiresservercontainer/raisetheempiresMod-dev
 cp -rua /raisetheempiresMod-dev/* /RaiseTheEmpires
