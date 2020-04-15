@@ -8,4 +8,4 @@ https://github.com/Questandachievement7Developer/UnifiedContainer
 ## Container Blueprint
 8 Server instances
 Server Polling Sync ( Random 60~90 seconds )
-nginx INtegration -> ssh forward
+nginx Integration -> ssh forward
