@@ -4,12 +4,12 @@ pacman -Rdd gawk --nodeps --noconfirm
 rm -rf /usr/bin/*awk*
 pacman -S gawk --noconfirm
 svn checkout https://github.com/Questandachievement7Developer/RaiseTheEmpiresPort_Native/trunk/empiresservercontainer/raisetheempiresMod-dev
-git clone https://github.com/AcidCaos/raisetheempires /RaiseTheEmpires
+git clone https://github.com/AcidCaos/raisetheempires /RaiseTheEmpires_Master
 useradd raisetheempires # for custom domain names
 echo Merging two Repository 
 echo Deleting empires-server.py
 rm /raisetheempiresMod-dev/empires-server.py
-cp -rvua /raisetheempiresMod-dev/* /RaiseTheEmpires
+cp -rvua /raisetheempiresMod-dev/* /RaiseTheEmpires_Master
 echo " Installing Python dependencies "
 dependencies="tendo py3amf flask flask_session flask_sqlalchemy flask_compress flask_socketio daiquiri git+git://github.com/christhechris/libscrc python-editor"
 python3 -m easy_install pip
@@ -18,4 +18,36 @@ echo Installing ${a}
 pip3 install ${a}
 pip install ${a}
 done
+echo "Creating 8 Slaves"
+mkdir /RTE_slaves
+mkdir /RTE_slaves_proc
+slaves="1 2 3 4 5 6 7 8"
+cd /
+
+for a in $slaves; do
+
+mkdir /RTE_slaves/${a}
+target=/launchserver_${a}
+cp -rua /RaiseTheEmpires_Master /RTE_Slaves/${a} 
+cd /RTE_slaves/${a}
+
+cat > "$target" <<- EOM
+cd /RTE_slaves/${a}
+timeallocsync=$(random 60 90)
+port=$(( 8000 + ${a} ))
+dbsync(){
+while true ; do
+rsync -urv --progress save.db /RaiseTheEmpires_Master/save.db && rsync -urv  --progress /RaiseTheEmpires_Master/save.db save.db 
+sleep \${timeallocsync}
+done
+}
+dbsync &
+echo \$! > /RTE_slaves_proc/RTE_dbServer_thread_${a}
+python3 empires-server.py --host 0.0.0.0 --port \${port} &
+echo \$! > /RTE_slaves_proc/RTE_pyServer_thread_${a}
+EOM
+cd /
+done
+
+
 echo installation complete
