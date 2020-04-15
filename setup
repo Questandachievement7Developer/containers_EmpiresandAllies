@@ -32,6 +32,7 @@ cp -rua /RaiseTheEmpires_Master /RTE_Slaves/${a}
 cd /RTE_slaves/${a}
 
 cat > "$target" <<- EOM
+#!/bin/bash
 cd /RTE_slaves/${a}
 timeallocsync=$(random 60 90)
 port=$(( 8000 + ${a} ))
@@ -49,5 +50,12 @@ EOM
 cd /
 done
 
+target=/killAllServer
+cat > "$target" <<- EOM
+#!/bin/bash
+for a in $(ls /RTE_slaves/proc); do
+echo Killing Server
+kill -9 $(cat ${a})
+EOM
 
 echo installation complete
