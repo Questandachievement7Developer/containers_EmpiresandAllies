@@ -8,10 +8,16 @@ useradd raisetheempires_${SESSIONID}
 cd /
 rm -rf /raisetheempiresMod-dev
 svn checkout https://github.com/Questandachievement7Developer/RaiseTheEmpiresPort_Native/trunk/empiresservercontainer/raisetheempiresMod-dev
-cp -rua /raisetheempiresMod-dev/* /RaiseTheEmpires
-cd /RaiseTheEmpires
+cp -rua /raisetheempiresMod-dev/* /RaiseTheEmpires_Master
+cd /RaiseTheEmpires_Master
 git fetch
-python3 empires-server.py --host 0.0.0.0 &
+
+for a in /launchserver* ;do
+bash ${a} &
+done
+
+echo "nginx"
+
 export serverPID=$!
 echo "--------------------"
 echo "PLEASE WAIT "
@@ -24,4 +30,4 @@ su -c "ssh -o "StrictHostKeyChecking=no" -o "ServerAliveInterval=360" -R 80:loca
 #ssh -o "StrictHostKeyChecking=no" -o "ServerAliveInterval=360" -R 80:localhost:5005 ssh.localhost.run
 #ssh -R localhost:80:localhost:8080 random-string@ssh.localhost.run
 echo "Server terminated"
-kill -9 ${serverPID}
+bash /killAllServer
