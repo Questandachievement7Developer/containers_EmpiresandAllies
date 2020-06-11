@@ -1,6 +1,9 @@
 #!/bin/sh
 echo Hello Welcome to the empiresandallies complex server
-pkg install git -y
+pkg install git busybox -y
+which(){
+busybox which
+}
 if [ -z $(which bay) ]; then
 git clone https://github.com/Questandachievement7Developer/UnifiedContainer 
 cd UnifiedContainer
