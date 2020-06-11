@@ -4,6 +4,7 @@ uname -a
 echo "Launching Empires and allies"
 echo Updating RTEPort
 SESSIONID=${RANDOM}_${RANDOM}
+export COMPUTERNAME="RTEPlayer"
 useradd raisetheempires_${SESSIONID}
 cd /
 rm -rf /raisetheempiresMod-dev
